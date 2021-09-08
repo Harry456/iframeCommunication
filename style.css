@@ -1,0 +1,10 @@
+#trigger {
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+.popup {
+  font-size: 1.25rem;
+  color: red;
+  display: none;
+}

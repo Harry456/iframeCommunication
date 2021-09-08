@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Iframe</title>
+</head>
+
+<body>
+  <form action="#">
+    <h2>IFrame Form - Child</h2>
+    <div class="form-group">
+      <label for="#">Name</label>
+      <input type="text" id="userName">
+    </div>
+    <div class="form-group">
+      <label for="#">Email</label>
+      <input type="text" id="email">
+    </div>
+    <button id="iframeBtn">Open Parent PopUp</button>
+  </form>
+
+  <a href="#" id="trigger">TriggerParent</a>
+
+
+  <script>
+
+    let userName = document.getElementById('userName')
+    let email = document.getElementById('email')
+    window.onload = function () {
+      window.addEventListener('message', function (e) {
+        console.log(e.data)
+        console.log("message received")
+        userName.value = e.data.userName
+        email.value = e.data.email
+      })
+    }
+    //message event fire when a window received a message.
+    //post message is to send message
+
+
+  </script>
+</body>
+
+</html>
